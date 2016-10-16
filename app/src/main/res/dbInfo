@@ -1,0 +1,12 @@
+private static final String LOGTAG = "EXPLORECA";
+
+private static final String DATABASE_NAME = "frugal.db";
+private static final int DATBASE_VERSION =1;
+
+private static final String TABLE_BILLS =  "bills"
+private static final String COL_ID = "billsId";
+
+private static final String TABLE_CREATE =
+        "CREATE TABLE " + TABLE_TOURS + " (" +
+        COL_ID + ")";
+

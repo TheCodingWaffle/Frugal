@@ -1,0 +1,174 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.frugal.main.ExpenseActivity">
+
+    <View
+        android:id="@+id/ViewColorPickerHelper"
+        android:layout_width="1dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="4dip"
+        android:layout_marginTop="4dip"
+        android:background="?android:attr/dividerVertical"
+        android:layout_centerHorizontal="true" />
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:stretchColumns="*">
+
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/light_blue">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Eat"
+                    android:id="@+id/eat"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:onClick="onClick" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/soft_yellow">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Drink"
+                    android:id="@+id/drink"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:onClick="onClick" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:paddingRight="5dip">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:background="?android:attr/dividerVertical"
+                    android:layout_alignParentTop="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingLeft="5dip">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:background="?android:attr/dividerVertical"
+                    android:layout_alignParentTop="true" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:text="Shop"
+                android:id="@+id/shop"
+                android:background="?android:attr/selectableItemBackground"
+                android:onClick="onClick" />
+
+            <Button
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:text="Go"
+                android:id="@+id/go"
+                android:background="?android:attr/selectableItemBackground"
+                android:onClick="onClick" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:paddingRight="5dip">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:background="?android:attr/dividerVertical"
+                    android:layout_alignParentTop="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingLeft="5dip">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:background="?android:attr/dividerVertical"
+                    android:layout_alignParentTop="true" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:text="Play"
+                android:id="@+id/play"
+                android:background="?android:attr/selectableItemBackground"
+                android:onClick="onClick" />
+
+            <Button
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:text="Live"
+                android:id="@+id/live"
+                android:background="?android:attr/selectableItemBackground"
+                android:onClick="onClick" />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

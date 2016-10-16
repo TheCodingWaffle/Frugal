@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Frugal</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">Open Navigation Drawer</string>
+    <string name="drawer_close">Close Navigation Drawer</string>
+
+    <string-array name="navigation">
+        <item>Home</item>
+        <item>Enter Expenses</item>
+        <item>View Statistics</item>
+        <item>Expenses</item>
+    </string-array>
+
+    <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="title_activity_expense">ExpenseActivity</string>
+    <string name="title_activity_statistics">StatisticsActivity</string>
+    <string name="title_activity_data_entry">DataEntryActivity</string>
+    <string name="title_activity_history">HistoryActivity</string>
+
+    <string-array name="eat_buttons">
+        <item>fast</item>
+        <item>dine</item>
+        <item>snack</item>
+        <item>other</item>
+    </string-array>
+    <string-array name="drink_buttons">
+        <item>coffee</item>
+        <item>adult</item>
+        <item>soda</item>
+        <item>other</item>
+    </string-array>
+    <string-array name="shop_buttons">
+        <item>cloths</item>
+        <item/>
+        <item/>
+        <item/>
+    </string-array>
+    <string-array name="go_buttons">
+        <item>gas</item>
+        <item>bus</item>
+        <item>train</item>
+        <item>other</item>
+    </string-array>
+    <string-array name="play_buttons">
+        <item/>
+        <item/>
+        <item/>
+        <item/>
+    </string-array>
+    <string-array name="live_buttons">
+        <item/>
+        <item/>
+        <item/>
+        <item/>
+    </string-array>
+
+    <!-- VALIDATOR ERRORS -->
+    <string name="amountZeroError">The amount is zero. Zero isn\'t really an expense is it now?</string>
+    <string name="amountToLargeError">WOW that\'s a lot! Is that total correct?</string>
+    <string name="descriptionSizeToBig">Little smaller description would be nice.</string>
+
+</resources>

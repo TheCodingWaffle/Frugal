@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/linearLayout">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:layout_marginTop="20dip"
+                android:layout_marginBottom="50dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="$"
+                    android:id="@+id/textView"
+                    android:textSize="45dip"
+                    android:textColor="#BDBDBD" />
+
+                <EditText
+                    android:layout_width="200dip"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:gravity="right"
+                    android:ems="10"
+                    android:id="@+id/editText"
+                    android:textSize="45dip"
+                    android:hint="0.00" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dip">
+
+                <Button
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="New Button"
+                    android:id="@+id/button3" />
+
+                <Button
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="New Button"
+                    android:id="@+id/button4" />
+
+                <Button
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="New Button"
+                    android:id="@+id/button5" />
+
+                <Button
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="New Button"
+                    android:id="@+id/button6" />
+            </LinearLayout>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Taxable?"
+                android:id="@+id/taxable"
+                android:layout_gravity="right"
+                android:checked="false"
+                android:layout_marginBottom="50dip" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/input_date"
+                android:layout_gravity="right"
+                android:text="Today"
+                android:textAlignment="center"
+                android:layout_marginBottom="50dip" />
+
+            <EditText
+                android:layout_width="300dip"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_description"
+                android:gravity="right"
+                android:textSize="25dip"
+                android:hint="Description" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="2dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="New Button"
+                android:id="@+id/button" />
+
+            <Button
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="New Button"
+                android:id="@+id/button2" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

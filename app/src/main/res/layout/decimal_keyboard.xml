@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <EditText
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:id="@+id/money_input"
+        android:textSize="45dip"
+        android:hint="0.00"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:layout_gravity="right"
+        android:textColor="@color/spinner_blue"
+        android:layout_marginBottom="20dip" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <Button android:textColor="@color/spinner_blue"  android:textSize="45dip"
+                    android:background="@color/grey"
+                    android:id="@+id/Button01"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.00"
+                    android:text="1" />
+
+                <Button android:textColor="@color/spinner_blue"  android:textSize="45dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:id="@+id/Button06"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.00"
+                    android:text="2" />
+
+                <Button android:textColor="@color/spinner_blue"  android:textSize="45dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:id="@+id/Button02"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.00"
+                    android:text="3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <Button android:textColor="@color/spinner_blue"  android:textSize="45dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:id="@+id/Button07"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.00"
+                    android:text="4"
+                    android:layout_marginTop="20dip"
+                    android:layout_marginBottom="20dip" />
+
+                <Button android:textColor="@color/spinner_blue"  android:textSize="45dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:id="@+id/Button08"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.00"
+                    android:text="5"
+                    android:layout_marginTop="20dip"
+                    android:layout_marginBottom="20dip" />
+
+                <Button android:textColor="@color/spinner_blue"  android:textSize="45dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:id="@+id/Button09"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.00"
+                    android:text="6"
+                    android:layout_marginTop="20dip"
+                    android:layout_marginBottom="20dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <Button android:textColor="@color/spinner_blue"  android:textSize="45dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:id="@+id/Button11"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.00"
+                    android:text="7"
+                    android:layout_marginBottom="20dip" />
+
+                <Button android:textColor="@color/spinner_blue"  android:textSize="45dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:id="@+id/Button12"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.00"
+                    android:text="8"
+                    android:layout_marginBottom="20dip" />
+
+                <Button android:textColor="@color/spinner_blue"  android:textSize="45dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:id="@+id/Button13"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.00"
+                    android:text="9"
+                    android:layout_marginBottom="20dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <Button android:textColor="@color/spinner_blue"  android:textSize="45dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:id="@+id/Button15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.00"
+                    android:text="0" />
+
+                <Button android:textColor="@color/spinner_blue"  android:textSize="45dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:id="@+id/Button16"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.00"
+                    android:text="00" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.38">
+
+            <Button android:textColor="@color/spinner_blue"  android:textSize="45dip"
+                android:background="?android:attr/selectableItemBackground"
+                android:id="@+id/button10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="B"
+                android:layout_weight="1" />
+
+            <Button android:textColor="@color/spinner_blue"  android:textSize="45dip"
+                android:background="?android:attr/selectableItemBackground"
+                android:id="@+id/keypad_ok"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="OK"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
