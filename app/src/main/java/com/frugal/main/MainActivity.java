@@ -1,6 +1,7 @@
 package com.frugal.main;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.ArrayUtils;
 
 import java.text.NumberFormat;
 import java.util.Calendar;
@@ -29,6 +31,8 @@ public class MainActivity extends DrawerActivity {
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
+
+    private int[] clickableTimeValues = {R.id.dayTitle, R.id.dayTotal, R.id.weekTitle, R.id.weekTotal, R.id.monthTitle, R.id.monthTotal};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,27 @@ public class MainActivity extends DrawerActivity {
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        // Always call the superclass so it can restore the view hierarchy
+        super.onRestoreInstanceState(savedInstanceState);
+
+        updateAmounts();
+    }
+
+    public void onClick(View view) {
+
+        Log.v("MainActivity", "-*/-*/-*/-*/onClick was called -*/-*/-*/-*/-*/");
+        Intent intent = new Intent(this, HistoryActivity.class);
+
+        if (ArrayUtils.contains(clickableTimeValues,view.getId())) {
+            intent.putExtra("time", view.getId());
+        }
+
+        this.overridePendingTransition(0, 0);
+        this.startActivity(intent);
     }
 
     private void updateAmounts() {

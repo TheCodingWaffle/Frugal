@@ -2,7 +2,6 @@ package com.frugal.main;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -25,7 +24,7 @@ public class DataEntryActivity extends DrawerActivity {
     private String[] buttonList;
     private  EditText moneyInput;
     private Date selectedDate;
-    private String catagory, subCatagory;
+    private String category, subCategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +37,9 @@ public class DataEntryActivity extends DrawerActivity {
 
         Bundle extras = getIntent().getExtras();
 
-        catagory = extras.getString("class");
+        category = extras.getString("class");
 
-        buttonList = selectButtonArray(catagory);
+        buttonList = selectButtonArray(category);
         fillButtons(buttonList);
 
         moneyInput = (EditText) findViewById(R.id.money_input);
@@ -161,7 +160,7 @@ public class DataEntryActivity extends DrawerActivity {
             String amount = moneyInput.getText().toString();
             amount = amount.equals("") ? "0" : amount;
 
-            subCatagory = subCatagory == null ? "Other" : subCatagory;
+            subCategory = subCategory == null ? "Other" : subCategory;
 
             Switch taxSwitch = (Switch) findViewById(R.id.taxable);
             boolean taxable = taxSwitch.isChecked() ? true : false;
@@ -172,9 +171,9 @@ public class DataEntryActivity extends DrawerActivity {
             String description = descriptionInput.getText().toString();
 
             ExpenseContainer expense = new ExpenseContainer(Double.parseDouble(amount),
-                    catagory,subCatagory,description,taxable,selectedDate);
+                    category, subCategory,description,taxable,selectedDate);
 
-            //ExpenseValidator validator = new ExpenseValidator(amount,catagory,subCatagory,description,taxable,selectedDate,this);
+            //ExpenseValidator validator = new ExpenseValidator(amount,category,subCategory,description,taxable,selectedDate,this);
 
             ExpenseValidator validator = new ExpenseValidator(expense,this);
 

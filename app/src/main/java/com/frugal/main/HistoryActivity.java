@@ -2,21 +2,19 @@ package com.frugal.main;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TableLayout;
-import android.widget.TableRow;
 
 import com.frugal.db.SqlDbHelper;
-import com.frugal.main.R;
 import com.frugal.main.expenseBuilder.NonImageRow;
 
 public class HistoryActivity extends DrawerActivity {
 
     private TableLayout table;
+
+    private int timeFragmentSelected = R.id.monthTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +28,21 @@ public class HistoryActivity extends DrawerActivity {
 
         table = (TableLayout) findViewById(R.id.main_table);
 
+        Bundle extras = getIntent().getExtras();
+
+        int selectedTime = extras.getInt("time");
+
+        if (selectedTime > 0) {
+            timeFragmentSelected = selectedTime;
+        }
+
         buildTable();
 
     }
 
     private void buildTable() {
 
-        try (Cursor cursor = dataSource.selectAll(SqlDbHelper.TABLE_EXPENSES)) {
+        try (Cursor cursor = dataSource.selectAllGivenTimeId(SqlDbHelper.TABLE_EXPENSES, timeFragmentSelected)) {
 
             while (cursor.moveToNext()) {
                 NonImageRow row = new NonImageRow();

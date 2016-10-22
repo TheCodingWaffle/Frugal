@@ -6,61 +6,96 @@
     <FrameLayout
         android:id="@+id/mainContent"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:stretchColumns="1">
 
-        <FrameLayout
+        <TableLayout
             android:id="@+id/innerContent"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_margin="200px">
+            android:layout_margin="200px"
+            android:stretchColumns="1">
 
-            <TextView
-                android:id="@+id/dayTitle"
+            <TableRow
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:text="Day"
-                android:gravity="center_horizontal" />
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
 
-            <TextView
-                android:id="@+id/dayTotal"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:text="Day"
-                android:textSize="50dp"
-                android:gravity="center_horizontal" />
+                <TextView
+                    android:id="@+id/dayTitle"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:onClick="onClick"
+                    android:text="Day"
+                    android:layout_width="50dp" />
 
-            <TextView
-                android:id="@+id/weekTitle"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:text="Week"
-                android:gravity="center_vertical|center"
-                android:layout_marginBottom="50dp" />
+                <TextView
+                    android:id="@+id/dayTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:onClick="onClick"
+                    android:text="Day"
+                    android:textSize="50dp" />
 
-            <TextView
-                android:id="@+id/weekTotal"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:text="Week"
-                android:textSize="35dp"
-                android:gravity="center_horizontal|center" />
+            </TableRow>
 
-            <TextView
-                android:id="@+id/monthTitle"
+            <TableRow
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center_horizontal|bottom"
-                android:text="Month"
-                android:layout_marginBottom="25dp" />
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
 
-            <TextView
-                android:id="@+id/monthTotal"
+                <TextView
+                    android:id="@+id/weekTitle"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:onClick="onClick"
+                    android:text="Week"
+                    android:layout_width="50dp" />
+
+                <TextView
+                    android:id="@+id/weekTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:onClick="onClick"
+                    android:text="Week"
+                    android:textSize="35dp" />
+            </TableRow>
+
+            <TableRow
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center_horizontal|bottom"
-                android:text="Month"
-                android:textSize="20dp" />
-        </FrameLayout>
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/monthTitle"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:onClick="onClick"
+                    android:text="Month"
+                    android:layout_width="50dp" />
+
+                <TextView
+                    android:id="@+id/monthTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:onClick="onClick"
+                    android:text="Month"
+                    android:textSize="20dp" />
+
+            </TableRow>
+        </TableLayout>
     </FrameLayout>
 
     <ListView

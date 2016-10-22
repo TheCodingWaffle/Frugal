@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.frugal.main.R;
+
 import org.apache.commons.lang3.time.DateUtils;
 
 import java.util.Calendar;
@@ -39,12 +41,32 @@ public class SqlDbDataSource {
         return db.query(table, columns, null, null, null, null, null);
     }
 
+
     public Cursor getAllWhere(String table, String[] columns, String where) {
         return db.query(table, columns, where, null, null, null, null);
     }
 
     public Cursor selectAll(String table) {
         return db.rawQuery("SELECT * FROM " + table, null);
+    }
+
+    public Cursor selectAllGivenTimeId(String table, int timeFragmentSelected) {
+
+        StringBuilder sql = new StringBuilder("SELECT * FROM ");
+        sql.append(table);
+        sql.append(" WHERE ");
+
+
+        if (timeFragmentSelected == R.id.dayTitle || timeFragmentSelected == R.id.dayTotal) {
+            sql.append(buildDateWhere(new Date(), new Date()));
+        } else if (timeFragmentSelected == R.id.weekTitle || timeFragmentSelected == R.id.weekTotal) {
+            sql.append(getWeekTime(new Date()));
+        } else if (timeFragmentSelected == R.id.monthTitle || timeFragmentSelected == R.id.monthTotal) {
+            sql.append(getCurrentMonthTime());
+        }
+
+        return db.rawQuery(sql.toString(), null);
+
     }
 
     private Cursor getSumWithDate(String query) {
@@ -73,35 +95,16 @@ public class SqlDbDataSource {
 
         StringBuilder query = getSumStringBuilder(column, table);
 
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(dayOfTheWeek);
-        cal.set(Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
-
-
-        Date beginningDate = getStartOfDay(cal.getTime());
-
-        cal.set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
-
-        Date endDate = cal.getTime();
-
-        query.append(buildDateWhere(beginningDate, endDate));
+        query.append(getWeekTime(dayOfTheWeek));
 
         return getSumWithDate(query.toString());
     }
 
     public Cursor getSumOfMonth(String column, String table, int calendarMonth, int year) {
 
-        Calendar cal = new GregorianCalendar(year, calendarMonth, 1);
-
         StringBuilder query = getSumStringBuilder(column, table);
 
-        Date beginningDate = cal.getTime();
-
-        cal = new GregorianCalendar(year, calendarMonth, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
-
-        Date endDate = cal.getTime();
-
-        query.append(buildDateWhere(beginningDate,endDate));
+        query.append(getMonthTime(calendarMonth, year));
 
         return getSumWithDate(query.toString());
     }
@@ -117,6 +120,41 @@ public class SqlDbDataSource {
         query.append(" WHERE ");
 
         return query;
+    }
+
+    private String getWeekTime(Date dayOfTheWeek) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(dayOfTheWeek);
+        cal.set(Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
+
+
+        Date beginningDate = getStartOfDay(cal.getTime());
+
+        cal.set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
+
+        Date endDate = cal.getTime();
+
+        return buildDateWhere(beginningDate, endDate);
+    }
+
+    private String getCurrentMonthTime() {
+
+        Calendar cal = Calendar.getInstance();
+        return getMonthTime(cal.get(Calendar.MONTH), cal.get(Calendar.YEAR));
+    }
+
+    private String getMonthTime(int calendarMonth, int year) {
+
+        Calendar cal = new GregorianCalendar(year, calendarMonth, 1);
+
+        Date beginningDate = cal.getTime();
+
+        cal = new GregorianCalendar(year, calendarMonth, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
+
+        Date endDate = cal.getTime();
+
+        return buildDateWhere(beginningDate, endDate);
+
     }
 
     private String buildDateWhere(Date greaterThan, Date lessThan) {
