@@ -10,7 +10,7 @@ public class SqlDbHelper extends SQLiteOpenHelper {
     private static final String LOGTAG = "DbHelper";
 
     private static final String DATABASE_NAME = "frugal.db";
-    private static final int DATBASE_VERSION = 11;
+    private static final int DATBASE_VERSION = 12;
 
     /*
       TABLES

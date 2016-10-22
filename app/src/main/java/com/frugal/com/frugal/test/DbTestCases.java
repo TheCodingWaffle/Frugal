@@ -12,9 +12,6 @@ import com.frugal.main.ExpenseContainer;
 import java.util.Calendar;
 import java.util.Date;
 
-/**
- * Created by Waffles on 7/5/2014.
- */
 public class DbTestCases {
 
     private static final String LOGTAG = "TEST: ";
@@ -33,9 +30,6 @@ public class DbTestCases {
         } else {
             Log.i(LOGTAG, " DATASOURCE IS NULL");
         }
-        //testTodaysDate();*/
-
-
     }
 
     private void testBillInsert() {
