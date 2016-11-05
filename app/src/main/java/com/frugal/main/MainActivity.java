@@ -61,7 +61,6 @@ public class MainActivity extends DrawerActivity {
 
     public void onClick(View view) {
 
-        Log.v("MainActivity", "-*/-*/-*/-*/onClick was called -*/-*/-*/-*/-*/");
         Intent intent = new Intent(this, HistoryActivity.class);
 
         if (ArrayUtils.contains(clickableTimeValues,view.getId())) {
@@ -181,6 +180,7 @@ public class MainActivity extends DrawerActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client.connect();
         AppIndex.AppIndexApi.start(client, getIndexApiAction());
+        updateAmounts();
     }
 
     @Override

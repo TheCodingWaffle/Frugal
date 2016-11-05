@@ -54,7 +54,9 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="50dip">
+                android:layout_marginBottom="50dip"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true" >
 
                 <Button
                     android:layout_width="0dip"
@@ -114,7 +116,9 @@
                 android:id="@+id/text_description"
                 android:gravity="right"
                 android:textSize="25dip"
-                android:hint="Description" />
+                android:hint="Description"
+                android:selectAllOnFocus="false"
+                android:singleLine="false" />
 
         </LinearLayout>
     </ScrollView>

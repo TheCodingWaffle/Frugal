@@ -7,10 +7,12 @@ import android.util.Log;
 
 public class SqlDbHelper extends SQLiteOpenHelper {
 
+    static SqlDbHelper instance;
+
     private static final String LOGTAG = "DbHelper";
 
     private static final String DATABASE_NAME = "frugal.db";
-    private static final int DATBASE_VERSION = 12;
+    private static final int DATBASE_VERSION = 13;
 
     /*
       TABLES
@@ -51,7 +53,7 @@ public class SqlDbHelper extends SQLiteOpenHelper {
                     + COL_CAT + " TEXT, " + COL_SUB_CAT + " TEXT, " + COL_AMOUNT + " REAL, "
                     + COL_DESC + " TEXT, " + COL_TAX + " BOOLEAN, " + COL_DATE + " LONG" + ")";
 
-    public SqlDbHelper(Context context) {
+    private SqlDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATBASE_VERSION);
     }
 
@@ -79,6 +81,13 @@ public class SqlDbHelper extends SQLiteOpenHelper {
         Log.i(LOGTAG, " : DROPPED TABLES");
 
         onCreate(db);
+    }
+
+    public static synchronized SqlDbHelper getInstance(Context context) {
+        if (instance == null) {
+            instance = new SqlDbHelper(context.getApplicationContext());
+        }
+        return instance;
     }
 }
 

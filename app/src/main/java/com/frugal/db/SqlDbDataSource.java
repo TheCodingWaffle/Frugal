@@ -17,11 +17,11 @@ import java.util.GregorianCalendar;
 public class SqlDbDataSource {
 
 
-    SQLiteOpenHelper dbhelper;
+    SqlDbHelper dbhelper;
     SQLiteDatabase db;
 
     public SqlDbDataSource(Context context) {
-        dbhelper = new SqlDbHelper(context);
+        dbhelper = SqlDbHelper.getInstance(context);
         db = dbhelper.getWritableDatabase();
     }
 
@@ -176,5 +176,13 @@ public class SqlDbDataSource {
 
     public static Date getStartOfDay(Date date) {
         return DateUtils.truncate(date, Calendar.DATE);
+    }
+
+    public boolean removeExpenseRecord(int recordId) {
+
+        String whereClause = SqlDbHelper.COL_ID + "=?";
+        String[] whereArgs = new String[]{String.valueOf(recordId)};
+
+        return db.delete(SqlDbHelper.TABLE_EXPENSES, whereClause, whereArgs) > 0;
     }
 }

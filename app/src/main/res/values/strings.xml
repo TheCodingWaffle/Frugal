@@ -34,9 +34,9 @@
     </string-array>
     <string-array name="shop_buttons">
         <item>cloths</item>
-        <item/>
-        <item/>
-        <item/>
+        <item />
+        <item />
+        <item />
     </string-array>
     <string-array name="go_buttons">
         <item>gas</item>
@@ -45,21 +45,22 @@
         <item>other</item>
     </string-array>
     <string-array name="play_buttons">
-        <item/>
-        <item/>
-        <item/>
-        <item/>
+        <item />
+        <item />
+        <item />
+        <item />
     </string-array>
     <string-array name="live_buttons">
-        <item/>
-        <item/>
-        <item/>
-        <item/>
+        <item />
+        <item />
+        <item />
+        <item />
     </string-array>
 
     <!-- VALIDATOR ERRORS -->
     <string name="amountZeroError">The amount is zero. Zero isn\'t really an expense is it now?</string>
     <string name="amountToLargeError">WOW that\'s a lot! Is that total correct?</string>
     <string name="descriptionSizeToBig">Little smaller description would be nice.</string>
+    <string name="title_activity_history_fragment">HistoryFragment</string>
 
 </resources>
